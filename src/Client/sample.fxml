@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="910.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TabPane layoutX="-2.0" prefHeight="586.0" prefWidth="918.0" tabClosingPolicy="UNAVAILABLE">
+         <tabs>
+            <Tab text="Registrer">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="Firstname" layoutX="36.0" layoutY="121.0" />
+                        <TextField fx:id="Lastname" layoutX="36.0" layoutY="202.0" />
+                        <Label layoutX="328.0" layoutY="45.0" text="Registrering av bruker">
+                           <font>
+                              <Font size="27.0" />
+                           </font></Label>
+                        <TextField fx:id="Age" layoutX="36.0" layoutY="354.0" />
+                        <TextField fx:id="City" layoutX="724.0" layoutY="121.0" />
+                        <TextField fx:id="phoneRegister" layoutX="724.0" layoutY="202.0" />
+                        <Label layoutX="41.0" layoutY="96.0" text="Fornavn">
+                           <font>
+                              <Font size="16.0" />
+                           </font></Label>
+                        <Label layoutX="36.0" layoutY="177.0" text="Etternavn">
+                           <font>
+                              <Font size="16.0" />
+                           </font></Label>
+                        <Label layoutX="37.0" layoutY="254.0" text="Kjønn">
+                           <font>
+                              <Font size="16.0" />
+                           </font></Label>
+                        <Label layoutX="38.0" layoutY="329.0" text="Alder">
+                           <font>
+                              <Font size="16.0" />
+                           </font></Label>
+                        <Label layoutX="768.0" layoutY="84.0" text="Bosted">
+                           <font>
+                              <Font size="16.0" />
+                           </font></Label>
+                        <Label layoutX="780.0" layoutY="165.0" text="Tlf nr">
+                           <font>
+                              <Font size="16.0" />
+                           </font></Label>
+                        <TextField fx:id="Interest1" layoutX="724.0" layoutY="342.0" />
+                        <TextField fx:id="Interest2" layoutX="724.0" layoutY="379.0" />
+                        <TextField fx:id="Interest3" layoutX="724.0" layoutY="413.0" />
+                        <Label layoutX="764.0" layoutY="317.0" text="Interesser">
+                           <font>
+                              <Font size="16.0" />
+                           </font></Label>
+                        <Button fx:id="Registrer" layoutX="391.0" layoutY="475.0" mnemonicParsing="false" onAction="#NewUser" text="Registrer deg!">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Button>
+                        <ChoiceBox fx:id="registerGender" layoutX="36.0" layoutY="292.0" prefHeight="25.0" prefWidth="91.0" value="Mann">
+                           <items>
+                              <FXCollections fx:factory="observableArrayList">
+                                 <String fx:value="Mann" />
+                                 <String fx:value="Kvinne" />
+                                 <String fx:value="Hen" />
+                              </FXCollections>
+                           </items>
+                        </ChoiceBox>
+                        <Button fx:id="uploadimage" layoutX="32.0" layoutY="426.0" mnemonicParsing="false" onAction="#uploadimage" prefHeight="25.0" prefWidth="151.0" text="Legg til profilbilde" />
+                        <TextField fx:id="test" layoutX="33.0" layoutY="463.0" />
+
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Søk">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="670.0">
+                     <children>
+                        <Label layoutX="142.0" layoutY="26.0" text="Søk etter andre med samme interesser som deg!" wrapText="true">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font></Label>
+                        <TableView fx:id="table" layoutX="142.0" layoutY="127.0" prefHeight="304.0" prefWidth="505.0">
+                           <columns>
+                              <TableColumn fx:id="kjønnT" prefWidth="66.0" text="Kjønn" />
+                              <TableColumn fx:id="alderT" prefWidth="40.0" text="Alder" />
+                              <TableColumn fx:id="interesserT" prefWidth="99.0" text="Interesser" />
+                              <TableColumn fx:id="interesserT2" prefWidth="99.0" text="Interesser" />
+                              <TableColumn fx:id="interesserT3" prefWidth="99.0" text="Interesser" />
+                              <TableColumn fx:id="bostedT" prefWidth="99.0" text="Bosted" />
+                           </columns>
+                        </TableView>
+                        <ChoiceBox fx:id="Gender" layoutX="23.0" layoutY="185.0" prefHeight="25.0" prefWidth="91.0" value="Mann">
+                           <items>
+                              <FXCollections fx:factory="observableArrayList">
+                                 <String fx:value="Mann" />
+                                 <String fx:value="Kvinne" />
+                                 <String fx:value="Hen" />
+                              </FXCollections>
+                           </items>
+                        </ChoiceBox>
+                        <TextField fx:id="Age1" layoutX="25.0" layoutY="266.0" prefHeight="25.0" prefWidth="45.0" />
+                        <Label layoutX="48.0" layoutY="152.0" text="Kjønn">
+                           <font>
+                              <Font size="16.0" />
+                           </font></Label>
+                        <Label layoutX="47.0" layoutY="232.0" text="Alder">
+                           <font>
+                              <Font size="16.0" />
+                           </font></Label>
+                        <Button fx:id="search" layoutX="13.0" layoutY="401.0" mnemonicParsing="false" onAction="#GetMatch" prefHeight="30.0" prefWidth="107.0" text="Søk">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <TextField fx:id="Age2" layoutX="70.0" layoutY="266.0" prefHeight="25.0" prefWidth="45.0" />
+                        <TextArea fx:id="textmatch" layoutX="667.0" layoutY="360.0" prefHeight="156.0" prefWidth="166.0" />
+                        <Button fx:id="contact" layoutX="667.0" layoutY="314.0" mnemonicParsing="false" onAction="#GetInfo" text="Kontaktinformasjon" />
+                        <ImageView fx:id="imgview1" fitHeight="150.0" fitWidth="200.0" layoutX="673.0" layoutY="122.0" pickOnBounds="true" preserveRatio="true" />
+                        <TextField fx:id="Antall" layoutX="26.0" layoutY="339.0" prefHeight="25.0" prefWidth="89.0" />
+                        <Label layoutX="46.0" layoutY="302.0" text="Antall">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Hent Informasjon">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="187.0" layoutY="51.0" text="Her kan du hente informasjon om de som har matchet med deg!">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="getshow" layoutX="381.0" layoutY="125.0" mnemonicParsing="false" onAction="#GetShow" prefHeight="40.0" prefWidth="156.0" text="Hent informasjon">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <TextArea fx:id="matching" layoutX="279.0" layoutY="229.0" prefHeight="232.0" prefWidth="391.0" />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
